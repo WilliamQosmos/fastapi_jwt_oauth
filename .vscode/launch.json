@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "cwd": "${workspaceFolder}",
+            "envFile": "${workspaceFolder}/.env",
+            "args": [
+                "app.__main__:app",
+                "--reload",
+                "--port",
+                "3003"
+            ],
+
+            "serverReadyAction":{
+                "pattern": "Uvicorn running on http://.*:([0-9]+)",
+                "uriFormat": "http://127.0.0.1:%s/specs",
+                "action": "openExternally"
+            }
+        }
+    ]
+}
